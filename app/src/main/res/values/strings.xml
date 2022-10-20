@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">firstTask</string>
+    <string name="app_name">LabTask1</string>
     <string name="user_name">Naim</string>
     <string name="btn_name">Send Data</string>
     <string name="Birth_Date">Send Data</string>
     <string name="phone">Send Data</string>
+    <string name="address">Send Data</string>
 </resources>
