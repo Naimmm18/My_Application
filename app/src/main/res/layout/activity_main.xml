@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/sky"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:gravity = "center">
 
         <TextView
             android:id = "@+id/textView4"
@@ -21,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Name"
+            android:hint="enter your name"
             android:textColor="@color/white"
             android:inputType="text" />
 
@@ -30,17 +31,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:textColor="@color/white"
-            android:text="BIRTHDATE" />
+            android:text="SELECT BIRTHDAY " />
 
-        <EditText
-            android:id="@+id/etBirth"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/datePickerButton"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:textColor="@color/white"
-            android:hint="birthday" />
+            android:text="JAN 01 2022"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            android:layout_marginTop="10dp"
+            android:onClick="openDatePicker"/>
 
         <TextView
             android:id="@+id/textViewPhone"
@@ -57,7 +66,7 @@
             android:ems="10"
             android:inputType="text"
             android:textColor="@color/white"
-            android:hint="phone"/>
+            android:hint="enter your no phone"/>
 
         <TextView
             android:id="@+id/textViewAddress"
@@ -74,7 +83,7 @@
             android:ems="10"
             android:inputType="text"
             android:textColor="@color/white"
-            android:hint="address"/>
+            android:hint="enter your address"/>
 
         <TextView
             android:id="@+id/textView"
@@ -91,7 +100,7 @@
             android:ems="10"
             android:inputType="text"
             android:textColor="@color/white"
-            android:hint="email" />
+            android:hint="enter your email" />
 
         <Button
         android:id="@+id/btnName"
@@ -99,6 +108,5 @@
         android:layout_height="wrap_content"
             android:onClick="sendData"
         android:text="Send Data" />
-
 
 </LinearLayout>
