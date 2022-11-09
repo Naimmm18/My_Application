@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Button;
@@ -48,23 +49,25 @@ public class MainActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         btnName = findViewById(R.id.btnName);
 
-        String message = etName.getText().toString();
-        String phonetxt = etPhone.getText().toString();
-        String addresstxt = etAddress.getText().toString();
-        String emailtxt = etEmail.getText().toString();
-        String datetxt = dateButton.getText().toString();
+        //btnName.setOnClickListener(v -> ){
 
-        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+            String message = etName.getText().toString();
+            String phonetxt = etPhone.getText().toString();
+            String addresstxt = etAddress.getText().toString();
+            String emailtxt = etEmail.getText().toString();
+            String datetxt = dateButton.getText().toString();
 
-        intent.putExtra(MESSAGE_KEY, message);
-        intent.putExtra(DATE_KEY, datetxt);
-        intent.putExtra(PHONE_KEY, phonetxt);
-        intent.putExtra(ADDRESS_KEY, addresstxt);
-        intent.putExtra(EMAIL_KEY, emailtxt);
+            Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 
-        startActivity(intent);
-
-        if (etEmail.getText().toString().isEmpty()) {
+        if(!emailtxt.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailtxt).matches()){
+            intent.putExtra(MESSAGE_KEY, message);
+            intent.putExtra(DATE_KEY, datetxt);
+            intent.putExtra(PHONE_KEY, phonetxt);
+            intent.putExtra(ADDRESS_KEY, addresstxt);
+            intent.putExtra(EMAIL_KEY, emailtxt);
+            startActivity(intent);
+        }
+        else if (etEmail.getText().toString().isEmpty()) {
             Toast.makeText(getApplicationContext(), "enter email address", Toast.LENGTH_SHORT).show();
 
         } else {
